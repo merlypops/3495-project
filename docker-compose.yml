@@ -22,7 +22,8 @@ services:
     build: ./worker
 
   db:
-    image: mysql:5.7
+    build: ./mysql
+      dockerfile: /Dockerfile
     volumes:
        - db_data:/var/lib/mysql
     restart: always
