@@ -23,9 +23,9 @@ services:
 
   db:
     image: mysql:5.7
-    environment:
-      MYSQL_USER: "root"
-      MYSQL_PASSWORD: "root"
+    volumes:
+       - db_data:/var/lib/mysql
+    restart: always
 
   result:
     build: ./result
