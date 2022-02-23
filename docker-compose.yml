@@ -8,14 +8,6 @@ services:
   enterData:
     build: ./enter-data
     command: python enter-data.py
-    
-  vote:
-    build: ./vote
-    command: python app.py
-    volumes:
-     - ./vote:/app
-    ports:
-      - "5000:80"
 
   mongoDB:
     image: mongo:latest
@@ -36,15 +28,6 @@ services:
        MYSQL_PASSWORD: docker
        MYSQL_DB: docker
     restart: always
-
-#   result:
-#     build: ./result
-#     command: nodemon server.js
-#     volumes:
-#       - ./result:/app
-#     ports:
-#       - "5001:80"
-#       - "5858:5858"
 
 volumes:
   db-data:
